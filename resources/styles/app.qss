@@ -1,0 +1,181 @@
+/* ============================================================
+ * 四象限便签 — 暗色透明主题 v2
+ * ============================================================
+ *
+ * 设计理念：
+ * - 全透明背景 + 半透明白色元素 → 轻盈的玻璃态质感
+ * - 柔化配色（v2）：降低象限色饱和度，统一透明度层级
+ * - 所有颜色引用集中管理于 utils/colors.h，QSS 中仅定义通用样式
+ *
+ * 适用环境：Windows 10/11 + Qt 6.x 暗色模式
+ *
+ * 注意：QSS 不支持 CSS 变量或宏，颜色值直接硬编码。
+ * 修改颜色时请同步更新 utils/colors.h 中的定义。
+ * ============================================================ */
+
+/* ============================================================
+ * 全局默认
+ * ============================================================ */
+QWidget {
+    font-family: "Microsoft YaHei", "Segoe UI", sans-serif;  /* 优先微软雅黑 */
+    font-size: 14px;
+    color: #ffffff;          /* 全局正文白色 */
+    background: transparent; /* 全局透明底（由实际 widget 覆盖） */
+}
+
+/* ============================================================
+ * 菜单（QMenu）
+ * ============================================================ */
+QMenu {
+    background-color: rgba(28, 28, 32, 0.92);          /* 深灰半透明 */
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 8px;
+    padding: 4px 0;
+}
+
+QMenu::item {
+    padding: 6px 32px 6px 16px;                        /* 左侧留白 + 右侧留快捷鍵空间 */
+    color: #e0e0e0;
+    background: transparent;
+}
+
+QMenu::item:selected {
+    background-color: rgba(59, 130, 196, 0.75);         /* 主操作色（钢蓝）半透明 */
+    color: #ffffff;
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.08);
+    margin: 4px 8px;
+}
+
+/* ============================================================
+ * 按钮（QPushButton）— 全局默认
+ * ============================================================ */
+QPushButton {
+    background-color: rgba(255, 255, 255, 0.06);        /* 微亮背景 */
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 6px;
+    padding: 6px 16px;
+    color: #e0e0e0;
+    min-height: 20px;
+}
+
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.12);        /* 悬停变亮 */
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+QPushButton:pressed {
+    background-color: rgba(255, 255, 255, 0.04);        /* 按下变暗 */
+}
+
+QPushButton:disabled {
+    background-color: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* ============================================================
+ * 输入控件（QLineEdit / QTextEdit / QPlainTextEdit）
+ * ============================================================ */
+QLineEdit,
+QTextEdit,
+QPlainTextEdit {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: #ffffff;
+    selection-background-color: rgba(59, 130, 196, 0.55); /* 选中文字背景 */
+    selection-color: #ffffff;                              /* 选中文字颜色 */
+}
+
+QLineEdit:focus,
+QTextEdit:focus,
+QPlainTextEdit:focus {
+    border-color: rgba(59, 130, 196, 0.75);               /* 焦点边框高亮 */
+}
+
+/* ============================================================
+ * 标签（QLabel）
+ * ============================================================ */
+QLabel {
+    color: #ffffff;
+    background: transparent;
+}
+
+/* ============================================================
+ * 工具提示（QToolTip）
+ * ============================================================ */
+QToolTip {
+    background-color: rgba(28, 28, 32, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 6px;
+    color: #ffffff;
+    padding: 4px 8px;
+}
+
+/* ============================================================
+ * 垂直滚动条
+ * ============================================================ */
+QScrollBar:vertical {
+    background: transparent;
+    width: 6px;                    /* 细滚动条 */
+    border-radius: 3px;
+    margin: 2px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+    min-height: 30px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* 隐藏滚动条两端的箭头按钮 */
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical {
+    height: 0;
+}
+
+/* ============================================================
+ * 水平滚动条
+ * ============================================================ */
+QScrollBar:horizontal {
+    background: transparent;
+    height: 6px;
+    border-radius: 3px;
+    margin: 2px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 3px;
+    min-width: 30px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+}
+
+QScrollBar::add-line:horizontal,
+QScrollBar::sub-line:horizontal {
+    width: 0;
+}
+
+/* ============================================================
+ * 滚动区域（QScrollArea）
+ * ============================================================ */
+QScrollArea {
+    background: transparent;
+}
+
+/* 内容区域也保持透明 */
+QScrollArea > QWidget > QWidget {
+    background: transparent;
+}

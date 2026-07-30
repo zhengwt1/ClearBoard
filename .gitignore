@@ -1,0 +1,19 @@
+# Build directories
+build/
+cmake-build-*/
+
+# IDE
+.vscode/
+.idea/
+*.user
+*.pro.user*
+
+# Compiled artifacts
+*.o
+*.obj
+*.moc
+*.rcc
+*.qm
+moc_*.cpp
+ui_*.h
+qrc_*.cpp

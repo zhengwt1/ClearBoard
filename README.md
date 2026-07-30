@@ -32,25 +32,25 @@
 
 > ClearBoard 主界面：Q1（重要紧急）→ Q2（重要不紧急）→ Q3（不重要紧急）→ Q4（不重要不紧急），底部为已完成任务区。
 
-![主窗口](docs/screenshots/main-window.png)
+![image-20260730173905302](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730173905302.png)
 
 ### 新建任务
 
 > 按象限配色的新建任务对话框，支持填写任务名称、明细备注和截止时间。
 
-![新建任务对话框](docs/screenshots/task-dialog.png)
+![image-20260730173917232](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730173917232.png)
 
 ### 设置面板
 
 > 设置面板支持开机自动启动（Windows 注册表）和自定义背景图片。
 
-![设置面板](docs/screenshots/settings-dialog.png)
+![image-20260730173935214](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730173935214.png)
 
 ### 已完成区
 
 > 展开底部已完成区，可查看已勾选完成的任务，支持恢复和永久删除。
 
-![已完成区展开](docs/screenshots/main-completed.png)
+![image-20260730173954360](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730173954360.png)
 
 ---
 

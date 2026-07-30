@@ -35,7 +35,7 @@ cmd_build() {
     "$CMAKE" --build "$BUILD_DIR" --parallel
 
     echo ""
-    echo "==> 编译完成: $BUILD_DIR/qtcode.exe"
+    echo "==> 编译完成: $BUILD_DIR/ClearBoard.exe"
 }
 
 cmd_clean() {
@@ -48,7 +48,7 @@ cmd_run() {
     cmd_build "$@"
     echo ""
     echo "==> 运行应用..."
-    "$BUILD_DIR/qtcode.exe"
+    "$BUILD_DIR/ClearBoard.exe"
 }
 
 case "${1:-build}" in

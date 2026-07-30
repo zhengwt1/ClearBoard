@@ -27,7 +27,7 @@ void TitleBar::setupUi()
 
     // ---- 标题文字 ----
     // WA_TransparentForMouseEvents：鼠标事件穿透到 TitleBar，由 TitleBar 统一处理拖动
-    m_titleLabel = new QLabel(QStringLiteral("四象限便签"), this);
+    m_titleLabel = new QLabel(QStringLiteral("ClearBoard"), this);
     m_titleLabel->setStyleSheet(
         "QLabel { color: rgba(255,255,255,0.7); font-size: 13px;"
         "  background: transparent; padding-left: 4px; }"

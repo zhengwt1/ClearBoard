@@ -1,5 +1,0 @@
-D:/qtcode/build-release/CMakeFiles/qtcode.dir
-D:/qtcode/build-release/CMakeFiles/edit_cache.dir
-D:/qtcode/build-release/CMakeFiles/rebuild_cache.dir
-D:/qtcode/build-release/CMakeFiles/qtcode_autogen_timestamp_deps.dir
-D:/qtcode/build-release/CMakeFiles/qtcode_autogen.dir

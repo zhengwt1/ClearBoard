@@ -1,4 +1,4 @@
-# 四象限便签 (QuadNote)
+# ClearBoard
 
 > 基于艾森豪威尔矩阵的桌面任务管理工具 · Qt 6 + C++17
 
@@ -22,7 +22,6 @@
 - [配置与设置](#配置与设置)
 - [数据存储](#数据存储)
 - [开发指南](#开发指南)
-- [界面截图](#界面截图)
 - [许可](#许可)
 
 ---
@@ -31,33 +30,33 @@
 
 ### 主界面
 
-> 四象限便签主界面：Q1（重要紧急）→ Q2（重要不紧急）→ Q3（不重要紧急）→ Q4（不重要不紧急），底部为已完成任务区。
->
-> ![image-20260730172252743](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730172252743.png)
+> ClearBoard 主界面：Q1（重要紧急）→ Q2（重要不紧急）→ Q3（不重要紧急）→ Q4（不重要不紧急），底部为已完成任务区。
+
+![主窗口](docs/screenshots/main-window.png)
 
 ### 新建任务
 
 > 按象限配色的新建任务对话框，支持填写任务名称、明细备注和截止时间。
->
-> ![image-20260730172309991](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730172309991.png)
+
+![新建任务对话框](docs/screenshots/task-dialog.png)
 
 ### 设置面板
 
 > 设置面板支持开机自动启动（Windows 注册表）和自定义背景图片。
->
-> ![image-20260730172408533](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730172408533.png)
+
+![设置面板](docs/screenshots/settings-dialog.png)
 
 ### 已完成区
 
 > 展开底部已完成区，可查看已勾选完成的任务，支持恢复和永久删除。
->
-> ![image-20260730172430575](C:\Users\15252\AppData\Roaming\Typora\typora-user-images\image-20260730172430575.png)
+
+![已完成区展开](docs/screenshots/main-completed.png)
 
 ---
 
 ## 功能概述
 
-四象限便签是一款基于**艾森豪威尔矩阵**（紧急/重要法则）的轻量级桌面任务管理应用。将任务按"重要性"和"紧急性"分为四个象限，帮助你优先处理真正重要的事情。
+ClearBoard 是一款基于**艾森豪威尔矩阵**（紧急/重要法则）的轻量级桌面任务管理应用。将任务按"重要性"和"紧急性"分为四个象限，帮助你优先处理真正重要的事情。
 
 | 象限 | 名称 | 行动指南 | 颜色 | 典型任务 |
 |------|------|----------|------|----------|
@@ -86,9 +85,9 @@
 
 ### 下载运行
 
-1. 从 [Releases](../../releases) 下载最新的 `qtcode-release.zip`
+1. 从 [Releases](../../releases) 下载最新的 `ClearBoard-release.zip`
 2. 解压到任意目录
-3. 双击 `qtcode.exe` 即可运行
+3. 双击 `ClearBoard.exe` 即可运行
 
 > **注意**：无需安装 Qt 运行时，所有依赖已打包在压缩包中。
 
@@ -125,7 +124,7 @@
 ```bash
 # 克隆仓库
 git clone <repo-url>
-cd qtcode
+cd ClearBoard
 
 # 构建（Debug）
 ./build.sh
@@ -157,7 +156,7 @@ cmake -B build -S . \
 # 编译
 cmake --build build --parallel
 
-# 输出：build/qtcode.exe
+# 输出：build/ClearBoard.exe
 ```
 
 ### 打包发布
@@ -167,14 +166,14 @@ cmake --build build --parallel
 cmake --build build-release --config Release
 
 # 2. 复制 exe 到打包目录
-mkdir pkg && cp build-release/qtcode.exe pkg/
+mkdir pkg && cp build-release/ClearBoard.exe pkg/
 
 # 3. 收集 Qt 运行时依赖
 cd pkg
-windeployqt qtcode.exe --no-translations --compiler-runtime
+windeployqt ClearBoard.exe --no-translations --compiler-runtime
 
 # 4. 打包为 zip
-powershell Compress-Archive -Path pkg\* -DestinationPath qtcode-release.zip
+powershell Compress-Archive -Path pkg\* -DestinationPath ClearBoard-release.zip
 ```
 
 ---
@@ -182,7 +181,7 @@ powershell Compress-Archive -Path pkg\* -DestinationPath qtcode-release.zip
 ## 项目架构
 
 ```
-qtcode/
+ClearBoard/
 ├── src/
 │   ├── main.cpp                          # 应用入口
 │   ├── mainwindow.h/cpp                  # 主窗口（布局编排 + 事件路由）
@@ -306,7 +305,7 @@ Q1 拖出 TaskCardWidget
 
 勾选"开机自动启动"后，应用会自动添加注册表项：
 ```
-HKCU\Software\Microsoft\Windows\CurrentVersion\Run\QuadNote
+HKCU\Software\Microsoft\Windows\CurrentVersion\Run\ClearBoard
 ```
 
 ### 自定义背景
@@ -321,7 +320,7 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Run\QuadNote
 
 所有任务数据保存在：
 ```
-%APPDATA%\QuadNote\tasks.json
+%APPDATA%\ClearBoard\tasks.json
 ```
 
 | 文件 | 用途 |
@@ -384,7 +383,7 @@ QString border = AppColors::whiteAlpha(AppColors::Alpha::Border)
 | 增量刷新而非全量重建 | 单任务操作只刷新 1-2 个象限，减少 widget 创建/销毁 |
 | 原子写入（tmp + rename） | 防止写入中途崩溃导致数据文件损坏 |
 | 防抖保存（500ms 定时器） | 合并频繁的 CRUD 操作为一次磁盘 I/O |
-| 实例 QTimer 而非 singleShot | 绑定 wxidget 生命周期，防止访问已销毁对象 |
+| 实例 QTimer 而非 singleShot | 绑定 widget 生命周期，防止访问已销毁对象 |
 | WIN32 GUI 子系统 | 启动时不弹出控制台黑色窗口 |
 
 ### 信号/槽命名规范

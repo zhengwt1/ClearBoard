@@ -8,7 +8,7 @@
  * 3. 清除背景恢复默认
  *
  * 设置存储：
- * - 背景图片路径 → QSettings("QuadNote", "QuadNote") → Windows 注册表
+ * - 背景图片路径 → QSettings("ClearBoard", "ClearBoard") → Windows 注册表
  * - 开机启动 → HKCU\Software\Microsoft\Windows\CurrentVersion\Run
  */
 

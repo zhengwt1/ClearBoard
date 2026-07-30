@@ -1,0 +1,5 @@
+D:/qtcode/build-clearboard/CMakeFiles/ClearBoard.dir
+D:/qtcode/build-clearboard/CMakeFiles/edit_cache.dir
+D:/qtcode/build-clearboard/CMakeFiles/rebuild_cache.dir
+D:/qtcode/build-clearboard/CMakeFiles/ClearBoard_autogen_timestamp_deps.dir
+D:/qtcode/build-clearboard/CMakeFiles/ClearBoard_autogen.dir

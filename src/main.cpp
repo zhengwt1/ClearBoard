@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @brief 四象限便签 —— 应用程序入口
+ * @brief ClearBoard —— 应用程序入口
  *
  * 本应用基于艾森豪威尔矩阵（紧急/重要四象限法则）实现任务管理。
  * 用户可将任务归类到四个象限中，支持拖拽排序、截止时间提醒、
@@ -21,6 +21,10 @@ int main(int argc, char *argv[])
 {
     // 创建 QApplication 实例 —— 管理 GUI 程序的控制流和主要设置
     QApplication app(argc, argv);
+
+    // 设置应用元数据（影响 QStandardPaths 和 QSettings 默认路径）
+    app.setApplicationName("ClearBoard");
+    app.setOrganizationName("ClearBoard");
 
     // 创建并显示主窗口
     // MainWindow 是一个无边框、透明背景的自定义窗口

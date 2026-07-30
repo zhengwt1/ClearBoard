@@ -3,7 +3,7 @@
  * @brief TaskStore 实现 —— 任务数据 CRUD + JSON 原子写入持久化
  *
  * 存储策略：
- * - 文件路径：%APPDATA%/QuadNote/tasks.json
+ * - 文件路径：%APPDATA%/ClearBoard/tasks.json
  * - 格式：JSON（缩进可读）
  * - 原子写入：先写 .tmp 临时文件，rename 替换 → 写入中途崩溃不丢数据
  * - 备份：替换成功后旧文件存为 .bak

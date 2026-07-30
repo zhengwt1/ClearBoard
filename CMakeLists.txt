@@ -1,5 +1,5 @@
 # ============================================================
-# 四象限便签 — CMake 构建配置
+# ClearBoard — CMake 构建配置
 # ============================================================
 # 构建命令：
 #   cmake -B build -DCMAKE_PREFIX_PATH=<Qt安装路径> -G "MinGW Makefiles"
@@ -7,7 +7,7 @@
 # ============================================================
 
 cmake_minimum_required(VERSION 3.16)
-project(qtcode VERSION 0.1.0 LANGUAGES CXX)
+project(ClearBoard VERSION 0.1.0 LANGUAGES CXX)
 
 # ---- C++ 标准 ----
 set(CMAKE_CXX_STANDARD 17)       # 使用 C++17（if constexpr、结构化绑定等）
@@ -80,14 +80,14 @@ set(SOURCES
 
 # ---- 可执行文件 ----
 # WIN32 标志：链接为 Windows GUI 子系统，启动时不弹出 cmd 黑框
-add_executable(qtcode WIN32
+add_executable(ClearBoard WIN32
     ${SOURCES}
     ${RESOURCE_FILES}
 )
 
 # ---- 头文件搜索路径 ----
 # 使 #include "models/taskcard.h" 等价于 #include "src/models/taskcard.h"
-target_include_directories(qtcode PRIVATE
+target_include_directories(ClearBoard PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/src/models
     ${CMAKE_CURRENT_SOURCE_DIR}/src/widgets
@@ -95,4 +95,4 @@ target_include_directories(qtcode PRIVATE
 )
 
 # ---- 链接 Qt 库 ----
-target_link_libraries(qtcode PRIVATE Qt6::Widgets Qt6::Svg)
+target_link_libraries(ClearBoard PRIVATE Qt6::Widgets Qt6::Svg)

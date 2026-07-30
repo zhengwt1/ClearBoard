@@ -91,7 +91,7 @@ void MainWindow::setupUi()
     // 全局鼠标追踪 → 边缘缩放需要实时获取鼠标位置
     setMouseTracking(true);
 
-    setWindowTitle(QStringLiteral("四象限便签"));
+    setWindowTitle(QStringLiteral("ClearBoard"));
     resize(960, 680);         // 默认尺寸
     setMinimumSize(640, 440); // 最小尺寸，防止布局挤压变形
 

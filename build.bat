@@ -37,7 +37,7 @@ goto :%ACTION% 2>nul || goto :usage
     if errorlevel 1 exit /b %errorlevel%
 
     echo.
-    echo Done: %BUILD_DIR%\qtcode.exe
+    echo Done: %BUILD_DIR%\ClearBoard.exe
     goto :eof
 
 :release
@@ -51,7 +51,7 @@ goto :%ACTION% 2>nul || goto :usage
     if errorlevel 1 exit /b %errorlevel%
 
     echo.
-    echo Done: %BUILD_DIR%\qtcode.exe
+    echo Done: %BUILD_DIR%\ClearBoard.exe
     goto :eof
 
 :clean
@@ -64,7 +64,7 @@ goto :%ACTION% 2>nul || goto :usage
     call :build
     echo.
     echo Starting application...
-    start "" "%BUILD_DIR%\qtcode.exe"
+    start "" "%BUILD_DIR%\ClearBoard.exe"
     goto :eof
 
 :usage

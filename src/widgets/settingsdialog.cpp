@@ -247,14 +247,14 @@ bool SettingsDialog::bgRemoved() const { return m_bgRemoved; }
 // ============================================================
 
 // ---- 开机自启（Windows 注册表） ----
-// 原理：在 HKCU\...\Run 下写入/删除 "QuadNote" 键值
+// 原理：在 HKCU\...\Run 下写入/删除 "ClearBoard" 键值
 // 值为应用程序的完整路径
 bool SettingsDialog::readAutoStart()
 {
 #ifdef Q_OS_WIN
     return QSettings(
         "HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
-        QSettings::NativeFormat).contains("QuadNote");
+        QSettings::NativeFormat).contains("ClearBoard");
 #else
     return false;  // 非 Windows 平台暂不支持
 #endif
@@ -269,9 +269,9 @@ void SettingsDialog::saveAutoStart(bool enabled)
     if (enabled) {
         // 写入完整路径（带引号以支持含空格的路径）
         QString appPath = QDir::toNativeSeparators(QApplication::applicationFilePath());
-        reg.setValue("QuadNote", QString("\"%1\"").arg(appPath));
+        reg.setValue("ClearBoard", QString("\"%1\"").arg(appPath));
     } else {
-        reg.remove("QuadNote");
+        reg.remove("ClearBoard");
     }
 #else
     Q_UNUSED(enabled);
@@ -281,13 +281,13 @@ void SettingsDialog::saveAutoStart(bool enabled)
 // ---- 背景图片路径（QSettings） ----
 QString SettingsDialog::readBackgroundPath()
 {
-    QSettings s("QuadNote", "QuadNote");
+    QSettings s("ClearBoard", "ClearBoard");
     return s.value("backgroundPath").toString();
 }
 
 void SettingsDialog::saveBackgroundPath(const QString &path)
 {
-    QSettings s("QuadNote", "QuadNote");
+    QSettings s("ClearBoard", "ClearBoard");
     s.setValue("backgroundPath", path);
 }
 

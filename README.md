@@ -32,25 +32,25 @@
 
 > ClearBoard 主界面：Q1（重要紧急）→ Q2（重要不紧急）→ Q3（不重要紧急）→ Q4（不重要不紧急），底部为已完成任务区。
 
-![image-20260730173905302](.\docs\image-20260730173905302.png)
+<img width="1920" height="1360" alt="image-20260730173905302" src="https://github.com/user-attachments/assets/d7c72965-2739-4b0b-9848-178a3b0770e0" />
 
 ### 新建任务
 
 > 按象限配色的新建任务对话框，支持填写任务名称、明细备注和截止时间。
 
-![image-20260730173917232](.\docs\image-20260730173917232.png![image-20260730173917232](D:\qtcode\docs\image-20260730173917232.png)
+<img width="1918" height="1361" alt="image-20260730173917232" src="https://github.com/user-attachments/assets/90585414-a62c-4230-8d21-b80d2014d19c" />
 
 ### 设置面板
 
 > 设置面板支持开机自动启动（Windows 注册表）和自定义背景图片。
 
-![image-20260730173954360](.\docs\image-20260730173954360.png)
+<img width="1915" height="1346" alt="image-20260730173954360" src="https://github.com/user-attachments/assets/da35d6a4-cbc6-4f5f-b4c6-bab347257c8b" />
 
 ### 已完成区
 
 > 展开底部已完成区，可查看已勾选完成的任务，支持恢复和永久删除。
 
-![image-20260730173935214](D:\qtcode\docs\image-20260730173935214.png)
+<img width="1920" height="1360" alt="image-20260730173935214" src="https://github.com/user-attachments/assets/bfd63b64-78ee-4bf4-ba9a-408ce073fe4e" />
 
 ---
 

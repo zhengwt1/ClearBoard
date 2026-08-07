@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ClearBoard.dir/src/mainwindow.cpp.obj.d"
   "CMakeFiles/ClearBoard.dir/src/models/taskstore.cpp.obj"
   "CMakeFiles/ClearBoard.dir/src/models/taskstore.cpp.obj.d"
+  "CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj"
+  "CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj.d"
   "CMakeFiles/ClearBoard.dir/src/widgets/backgroundwidget.cpp.obj"
   "CMakeFiles/ClearBoard.dir/src/widgets/backgroundwidget.cpp.obj.d"
   "CMakeFiles/ClearBoard.dir/src/widgets/notificationtoast.cpp.obj"

@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/qtcode/src/main.cpp" "CMakeFiles/ClearBoard.dir/src/main.cpp.obj" "gcc" "CMakeFiles/ClearBoard.dir/src/main.cpp.obj.d"
   "D:/qtcode/src/mainwindow.cpp" "CMakeFiles/ClearBoard.dir/src/mainwindow.cpp.obj" "gcc" "CMakeFiles/ClearBoard.dir/src/mainwindow.cpp.obj.d"
   "D:/qtcode/src/models/taskstore.cpp" "CMakeFiles/ClearBoard.dir/src/models/taskstore.cpp.obj" "gcc" "CMakeFiles/ClearBoard.dir/src/models/taskstore.cpp.obj.d"
+  "D:/qtcode/src/utils/trayiconmanager.cpp" "CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj" "gcc" "CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj.d"
   "D:/qtcode/src/widgets/backgroundwidget.cpp" "CMakeFiles/ClearBoard.dir/src/widgets/backgroundwidget.cpp.obj" "gcc" "CMakeFiles/ClearBoard.dir/src/widgets/backgroundwidget.cpp.obj.d"
   "D:/qtcode/src/widgets/notificationtoast.cpp" "CMakeFiles/ClearBoard.dir/src/widgets/notificationtoast.cpp.obj" "gcc" "CMakeFiles/ClearBoard.dir/src/widgets/notificationtoast.cpp.obj.d"
   "D:/qtcode/src/widgets/quadrantwidget.cpp" "CMakeFiles/ClearBoard.dir/src/widgets/quadrantwidget.cpp.obj" "gcc" "CMakeFiles/ClearBoard.dir/src/widgets/quadrantwidget.cpp.obj.d"

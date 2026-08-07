@@ -4,6 +4,7 @@
  */
 
 #include "titlebar.h"
+#include "mainwindow.h"
 
 #include <QHBoxLayout>
 #include <QMouseEvent>
@@ -74,7 +75,8 @@ void TitleBar::setupUi()
     m_minBtn = new QPushButton(QString(QChar(0x2212)), this);
     m_minBtn->setStyleSheet(btnStyle("rgba(255,255,255,0.15)"));
     connect(m_minBtn, &QPushButton::clicked, this, [this]() {
-        if (window()) window()->showMinimized();
+        auto *mw = qobject_cast<MainWindow *>(window());
+        if (mw) mw->hideToTray();
     });
     layout->addWidget(m_minBtn);
 
@@ -95,7 +97,8 @@ void TitleBar::setupUi()
     m_closeBtn = new QPushButton(QString(QChar(0x00D7)), this);
     m_closeBtn->setStyleSheet(btnStyle("rgba(255,255,255,0.15)", "#c0392b"));
     connect(m_closeBtn, &QPushButton::clicked, this, [this]() {
-        if (window()) window()->close();
+        auto *mw = qobject_cast<MainWindow *>(window());
+        if (mw) mw->hideToTray();
     });
     layout->addWidget(m_closeBtn);
 }

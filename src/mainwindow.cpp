@@ -39,6 +39,8 @@
 #include <QListWidget>
 #include <QWindow>
 #include <QVBoxLayout>
+#include <QCloseEvent>
+#include <QApplication>
 
 #include "widgets/quadrantwidget.h"
 #include "widgets/tasklistwidget.h"
@@ -51,6 +53,7 @@
 #include "widgets/titlebar.h"
 #include "utils/helpers.h"
 #include "utils/colors.h"
+#include "utils/trayiconmanager.h"
 
 #include <QSettings>
 
@@ -82,8 +85,7 @@ void MainWindow::setupUi()
     // ---- 窗口属性 ----
     // FramelessWindowHint: 无标题栏 → 需要自定义标题栏
     // 不设置 WindowSystemMenuHint → 避免与无边框冲突
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint |
-                   Qt::WindowMaximizeButtonHint);
+    setWindowFlags(Qt::Tool | Qt::FramelessWindowHint);
     // WA_TranslucentBackground: 允许窗口透明 → 实现圆角效果
     setAttribute(Qt::WA_TranslucentBackground);
     // WA_NoSystemBackground: 不绘制默认背景
@@ -101,6 +103,13 @@ void MainWindow::setupUi()
     if (styleFile.open(QFile::ReadOnly)) {
         setStyleSheet(QString::fromUtf8(styleFile.readAll()));
         styleFile.close();
+    }
+
+    // ---- 系统托盘图标 ----
+    // 在窗口显示前创建托盘图标（托盘图标在应用整个生命周期中保持可见）
+    m_trayIcon = new TrayIconManager(this);
+    if (m_trayIcon->isAvailable()) {
+        m_trayIcon->show();
     }
 
     // ---- 外层容器 ----
@@ -197,6 +206,14 @@ void MainWindow::setupConnections()
 
     // 启动 2 秒后做首次检查（给用户启动后一点缓冲时间）
     QTimer::singleShot(2000, this, &MainWindow::checkOverdueTasks);
+
+    // ---- 系统托盘信号 ----
+    if (m_trayIcon && m_trayIcon->isAvailable()) {
+        connect(m_trayIcon, &TrayIconManager::restoreRequested,
+                this, &MainWindow::onTrayRestore);
+        connect(m_trayIcon, &TrayIconManager::exitRequested,
+                this, &MainWindow::onTrayExit);
+    }
 }
 
 // ============================================================
@@ -336,6 +353,55 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *event)
 {
     updateCursorForPos(event->pos());
     QMainWindow::mouseReleaseEvent(event);
+}
+
+// ============================================================
+// 关闭事件拦截（隐藏到托盘而非退出）
+// ============================================================
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (m_trayIcon && m_trayIcon->isAvailable()) {
+        // 托盘可用 → 隐藏窗口到托盘，不退出应用
+        hideToTray();
+        event->ignore();
+    } else {
+        // 托盘不可用 → 正常退出
+        event->accept();
+    }
+}
+
+// ============================================================
+// 系统托盘槽
+// ============================================================
+
+void MainWindow::hideToTray()
+{
+    m_wasMaximized = isMaximized();
+    hide();
+}
+
+void MainWindow::onTrayRestore()
+{
+    // 恢复到隐藏前的窗口状态
+    if (m_wasMaximized)
+        showMaximized();
+    else
+        showNormal();
+
+    raise();           // 提升到窗口 Z 序顶层
+    activateWindow();  // 获取键盘焦点
+
+    m_wasMaximized = false;
+}
+
+void MainWindow::onTrayExit()
+{
+    // 先隐藏托盘图标，防止通知区域残留
+    if (m_trayIcon)
+        m_trayIcon->hide();
+
+    QApplication::quit();
 }
 
 // ============================================================

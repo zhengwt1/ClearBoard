@@ -30,6 +30,8 @@ class BackgroundWidget;
 class QuadrantWidget;
 class TrashBinWidget;
 class TitleBar;
+class TrayIconManager;
+class QCloseEvent;
 class QVBoxLayout;
 
 class MainWindow : public QMainWindow
@@ -39,6 +41,9 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+    /// 隐藏窗口到系统托盘（保存最大化状态），供 TitleBar 调用
+    void hideToTray();
 
 private slots:
     // ---- 象限相关的槽 ----
@@ -79,11 +84,20 @@ private slots:
     /// 应用背景图片更改
     void applyBackground(const QString &path);
 
+    // ---- 系统托盘 ----
+    /// 从托盘还原窗口
+    void onTrayRestore();
+    /// 从托盘菜单退出应用
+    void onTrayExit();
+
 protected:
     // ---- 窗口缩放事件（边缘拖动） ----
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+
+    // ---- 关闭事件拦截（隐藏到托盘而非退出） ----
+    void closeEvent(QCloseEvent *event) override;
 
 private:
     // ---- 初始化 ----
@@ -125,6 +139,12 @@ private:
 
     /// 边缘拖拽缩放灵敏度（像素）：鼠标距边缘 ≤ 此值时触发 resize
     static constexpr int kResizeMargin = 6;
+
+    /// 系统托盘图标管理器
+    TrayIconManager *m_trayIcon = nullptr;
+
+    /// 记录隐藏到托盘前的最大化状态（用于还原）
+    bool m_wasMaximized = false;
 };
 
 #endif // MAINWINDOW_H

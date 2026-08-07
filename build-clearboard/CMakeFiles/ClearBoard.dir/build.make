@@ -278,11 +278,26 @@ CMakeFiles/ClearBoard.dir/src/widgets/settingsdialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ClearBoard.dir/src/widgets/settingsdialog.cpp.s"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\qtcode\src\widgets\settingsdialog.cpp -o CMakeFiles\ClearBoard.dir\src\widgets\settingsdialog.cpp.s
 
+CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj: CMakeFiles/ClearBoard.dir/flags.make
+CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj: CMakeFiles/ClearBoard.dir/includes_CXX.rsp
+CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj: D:/qtcode/src/utils/trayiconmanager.cpp
+CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj: CMakeFiles/ClearBoard.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\qtcode\build-clearboard\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj -MF CMakeFiles\ClearBoard.dir\src\utils\trayiconmanager.cpp.obj.d -o CMakeFiles\ClearBoard.dir\src\utils\trayiconmanager.cpp.obj -c D:\qtcode\src\utils\trayiconmanager.cpp
+
+CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.i"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\qtcode\src\utils\trayiconmanager.cpp > CMakeFiles\ClearBoard.dir\src\utils\trayiconmanager.cpp.i
+
+CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.s"
+	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\qtcode\src\utils\trayiconmanager.cpp -o CMakeFiles\ClearBoard.dir\src\utils\trayiconmanager.cpp.s
+
 CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj: CMakeFiles/ClearBoard.dir/flags.make
 CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj: CMakeFiles/ClearBoard.dir/includes_CXX.rsp
 CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj: qrc_resources.cpp
 CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj: CMakeFiles/ClearBoard.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\qtcode\build-clearboard\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\qtcode\build-clearboard\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj"
 	C:\Qt\Tools\mingw1310_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj -MF CMakeFiles\ClearBoard.dir\qrc_resources.cpp.obj.d -o CMakeFiles\ClearBoard.dir\qrc_resources.cpp.obj -c D:\qtcode\build-clearboard\qrc_resources.cpp
 
 CMakeFiles/ClearBoard.dir/qrc_resources.cpp.i: cmake_force
@@ -308,6 +323,7 @@ ClearBoard_OBJECTS = \
 "CMakeFiles/ClearBoard.dir/src/widgets/taskdialog.cpp.obj" \
 "CMakeFiles/ClearBoard.dir/src/widgets/notificationtoast.cpp.obj" \
 "CMakeFiles/ClearBoard.dir/src/widgets/settingsdialog.cpp.obj" \
+"CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj" \
 "CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj"
 
 # External object files for target ClearBoard
@@ -326,6 +342,7 @@ ClearBoard.exe: CMakeFiles/ClearBoard.dir/src/widgets/titlebar.cpp.obj
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/src/widgets/taskdialog.cpp.obj
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/src/widgets/notificationtoast.cpp.obj
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/src/widgets/settingsdialog.cpp.obj
+ClearBoard.exe: CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/qrc_resources.cpp.obj
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/build.make
 ClearBoard.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6Widgets.a
@@ -336,7 +353,7 @@ ClearBoard.exe: C:/Qt/6.11.1/mingw_64/lib/libQt6EntryPoint.a
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/linkLibs.rsp
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/objects1.rsp
 ClearBoard.exe: CMakeFiles/ClearBoard.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\qtcode\build-clearboard\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable ClearBoard.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\qtcode\build-clearboard\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable ClearBoard.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ClearBoard.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

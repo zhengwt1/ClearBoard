@@ -393,7 +393,27 @@ CMakeFiles/ClearBoard.dir/src/widgets/titlebar.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qiodevice.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qtextdocument.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qurl.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/QPoint \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QPoint D:/qtcode/src/mainwindow.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QMainWindow \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qmainwindow.h \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qtabwidget.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QSet \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QTimer \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qtimer.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qbasictimer.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qeventloop.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qdeadlinetimer.h \
+ D:/qtcode/src/models/taskcard.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QString \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QDateTime \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qdatetime.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qcalendar.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/qlocale.h \
+ D:/qtcode/src/models/taskstore.h \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QObject \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QList \
+ D:/qtcode/src/models/taskcard.h \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QHBoxLayout \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/qboxlayout.h \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/qlayout.h \
@@ -402,10 +422,6 @@ CMakeFiles/ClearBoard.dir/src/widgets/titlebar.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtGui/QMouseEvent \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qevent.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreevent.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qbasictimer.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qabstracteventdispatcher.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qeventloop.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qdeadlinetimer.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qeventpoint.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qvector2d.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qvectornd.h \
@@ -424,7 +440,6 @@ CMakeFiles/ClearBoard.dir/src/widgets/titlebar.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreapplication.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qcoreapplication_platform.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qinputmethod.h \
- C:/Qt/6.11.1/mingw_64/include/QtCore/qlocale.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qguiapplication_platform.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/QWindow \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qwindow.h \

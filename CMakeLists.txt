@@ -76,6 +76,8 @@ set(SOURCES
     # 工具层
     src/utils/helpers.h                 # UUID 生成等工具函数
     src/utils/colors.h                  # 统一色彩系统（象限色板+透明度层级）
+    src/utils/trayiconmanager.cpp       # 系统托盘图标管理
+    src/utils/trayiconmanager.h
 )
 
 # ---- 可执行文件 ----

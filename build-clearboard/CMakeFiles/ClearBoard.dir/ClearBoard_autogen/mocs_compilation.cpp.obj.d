@@ -409,6 +409,8 @@ CMakeFiles/ClearBoard.dir/ClearBoard_autogen/mocs_compilation.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtCore/q20algorithm.h \
  D:\qtcode\build-clearboard\ClearBoard_autogen\M4YTXQ7V2H/moc_taskstore.cpp \
  D:/qtcode/src/models/taskstore.h \
+ D:\qtcode\build-clearboard\ClearBoard_autogen\VSCBVMNR7M/moc_trayiconmanager.cpp \
+ D:/qtcode/src/utils/trayiconmanager.h \
  D:\qtcode\build-clearboard\ClearBoard_autogen\RZ4CM6YYJ6/moc_backgroundwidget.cpp \
  D:/qtcode/src/widgets/backgroundwidget.h \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QWidget \

@@ -499,6 +499,9 @@ CMakeFiles/ClearBoard.dir/src/mainwindow.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qsurface.h \
  C:/Qt/6.11.1/mingw_64/include/QtGui/qsurfaceformat.h \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QVBoxLayout \
+ C:/Qt/6.11.1/mingw_64/include/QtGui/QCloseEvent \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/QApplication \
+ C:/Qt/6.11.1/mingw_64/include/QtWidgets/qapplication.h \
  D:\qtcode\src\widgets/quadrantwidget.h \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QWidget \
  C:/Qt/6.11.1/mingw_64/include/QtWidgets/QPushButton \
@@ -539,5 +542,6 @@ CMakeFiles/ClearBoard.dir/src/mainwindow.cpp.obj: \
  D:\qtcode\src\utils/helpers.h C:/Qt/6.11.1/mingw_64/include/QtCore/QUuid \
  C:/Qt/6.11.1/mingw_64/include/QtCore/quuid.h \
  D:\qtcode\src\utils/colors.h C:/Qt/6.11.1/mingw_64/include/QtGui/QColor \
+ D:\qtcode\src\utils/trayiconmanager.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QSettings \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qsettings.h

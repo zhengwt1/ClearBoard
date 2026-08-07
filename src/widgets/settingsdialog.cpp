@@ -14,10 +14,26 @@
 #include <QPixmap>
 #include <QStandardPaths>
 #include <QDir>
+#include <QFileInfo>
+#include <QFile>
 
 #ifdef Q_OS_WIN
 #include <windows.h>  // 仅 Windows 下需要（开机自启注册表）
 #endif
+
+// ============================================================
+// 背景图片存储目录
+// ============================================================
+// 与 TaskStore 共享相同的 AppData 基础路径（%APPDATA%/ClearBoard/），
+// 在其下创建 backgrounds/ 子目录存放用户选择的背景图片副本。
+// 这样即使原始文件被删除或移动，背景图依然有效。
+static QString backgroundStorageDir()
+{
+    QString dir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)
+                  + QStringLiteral("/backgrounds");
+    QDir().mkpath(dir);
+    return dir;
+}
 
 SettingsDialog::SettingsDialog(QWidget *parent)
     : QDialog(parent)
@@ -151,7 +167,24 @@ void SettingsDialog::setupUi()
             QStringLiteral("选择背景图片"), QString(),
             QStringLiteral("图片文件 (*.png *.jpg *.jpeg *.bmp *.gif)"));
         if (!path.isEmpty()) {
-            m_bgPathEdit->setText(path);
+            // 将图片复制到应用数据目录，避免依赖原始文件位置
+            QFileInfo fi(path);
+            QString suffix = fi.suffix();
+            QString destPath = backgroundStorageDir()
+                               + QStringLiteral("/bg_image.") + suffix;
+            // 先删除旧背景文件（可能扩展名不同）
+            QDir bgDir(backgroundStorageDir());
+            const auto entries = bgDir.entryList({"bg_image.*"}, QDir::Files);
+            for (const auto &entry : entries) {
+                if (entry != QStringLiteral("bg_image.") + suffix)
+                    bgDir.remove(entry);
+            }
+            if (QFile::copy(path, destPath)) {
+                m_bgPathEdit->setText(QDir::toNativeSeparators(destPath));
+            } else {
+                // 复制失败时回退到原始路径
+                m_bgPathEdit->setText(path);
+            }
             m_bgRemoved = false;  // 选择了新图片 → 取消"清除"标记
         }
     });
@@ -171,6 +204,11 @@ void SettingsDialog::setupUi()
     connect(m_bgRemoveBtn, &QPushButton::clicked, this, [this]() {
         m_bgPathEdit->clear();
         m_bgRemoved = true;  // 标记为"已清除"
+        // 删除存储目录中的背景文件
+        QDir bgDir(backgroundStorageDir());
+        const auto entries = bgDir.entryList({"bg_image.*"}, QDir::Files);
+        for (const auto &entry : entries)
+            bgDir.remove(entry);
     });
     bgRow->addWidget(m_bgRemoveBtn);
 

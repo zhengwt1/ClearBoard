@@ -274,6 +274,30 @@ src/models/taskstore.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\ClearBoard.dir\build.make CMakeFiles/ClearBoard.dir/src/models/taskstore.cpp.s
 .PHONY : src/models/taskstore.cpp.s
 
+src/utils/trayiconmanager.obj: src/utils/trayiconmanager.cpp.obj
+.PHONY : src/utils/trayiconmanager.obj
+
+# target to build an object file
+src/utils/trayiconmanager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ClearBoard.dir\build.make CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.obj
+.PHONY : src/utils/trayiconmanager.cpp.obj
+
+src/utils/trayiconmanager.i: src/utils/trayiconmanager.cpp.i
+.PHONY : src/utils/trayiconmanager.i
+
+# target to preprocess a source file
+src/utils/trayiconmanager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ClearBoard.dir\build.make CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.i
+.PHONY : src/utils/trayiconmanager.cpp.i
+
+src/utils/trayiconmanager.s: src/utils/trayiconmanager.cpp.s
+.PHONY : src/utils/trayiconmanager.s
+
+# target to generate assembly for a file
+src/utils/trayiconmanager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\ClearBoard.dir\build.make CMakeFiles/ClearBoard.dir/src/utils/trayiconmanager.cpp.s
+.PHONY : src/utils/trayiconmanager.cpp.s
+
 src/widgets/backgroundwidget.obj: src/widgets/backgroundwidget.cpp.obj
 .PHONY : src/widgets/backgroundwidget.obj
 
@@ -516,6 +540,9 @@ help:
 	@echo ... src/models/taskstore.obj
 	@echo ... src/models/taskstore.i
 	@echo ... src/models/taskstore.s
+	@echo ... src/utils/trayiconmanager.obj
+	@echo ... src/utils/trayiconmanager.i
+	@echo ... src/utils/trayiconmanager.s
 	@echo ... src/widgets/backgroundwidget.obj
 	@echo ... src/widgets/backgroundwidget.i
 	@echo ... src/widgets/backgroundwidget.s

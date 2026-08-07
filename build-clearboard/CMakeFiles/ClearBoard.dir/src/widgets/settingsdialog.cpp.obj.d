@@ -472,6 +472,8 @@ CMakeFiles/ClearBoard.dir/src/widgets/settingsdialog.cpp.obj: \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QStandardPaths \
  C:/Qt/6.11.1/mingw_64/include/QtCore/qstandardpaths.h \
  C:/Qt/6.11.1/mingw_64/include/QtCore/QDir \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QFileInfo \
+ C:/Qt/6.11.1/mingw_64/include/QtCore/QFile \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/windows.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/sdkddkver.h \
  C:/Qt/Tools/mingw1310_64/x86_64-w64-mingw32/include/excpt.h \
